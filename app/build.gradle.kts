@@ -7,6 +7,8 @@ android {
     namespace = "ru.netology.nmediapractikakolosova"
     compileSdk = 34
 
+
+
     defaultConfig {
         applicationId = "ru.netology.nmediapractikakolosova"
         minSdk = 29
@@ -16,6 +18,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    buildFeatures.viewBinding = true
+
 
     buildTypes {
         release {

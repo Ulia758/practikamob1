@@ -11,14 +11,14 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/like"
         android:layout_width="43dp"
         android:layout_height="34dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="#FDF6FE"
         android:contentDescription="@string/like"
-        android:src="@drawable/icons8_heart_48___"
+        android:src="@drawable/heart_66744"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
         tools:ignore="TouchTargetSizeCheck" />
@@ -117,7 +117,7 @@
         android:layout_marginTop="12dp"
         android:backgroundTint="#FDF6FE"
         android:contentDescription="@string/share"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/like"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
         app:srcCompat="@drawable/icons8_share_48"
         tools:ignore="TouchTargetSizeCheck" />
@@ -133,38 +133,38 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/share"
         app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/like"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="60dp"
         android:text="@string/_5"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/prosmotr"
         app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toEndOf="@+id/share"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textprosmotr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/_5"
+        android:text="15M"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/prosmotr"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/prosmotr"
         android:layout_width="41dp"
-        android:layout_height="39dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.63"
