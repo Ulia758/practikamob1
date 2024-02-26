@@ -1,4 +1,4 @@
-package ru.netology.nmediapractikakolosova
+package ru.netology.myapplication
 
 import org.junit.Test
 
