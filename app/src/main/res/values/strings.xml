@@ -9,10 +9,9 @@
     <string name="_10">0</string>
     <string name="_5">0</string>
     <string name="share">Share</string>
-    <string name="textprosmotrov">10</string>
+    <string name="textprosmotrov">1</string>
     <string name="error_empty_content">Не может быть пустым</string>
     <string name="post_text">Текст поста</string>
     <string name="remove">Remove</string>
     <string name="edit">Edit</string>
-
 </resources>

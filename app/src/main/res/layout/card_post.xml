@@ -5,18 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/like"
+        style="@style/Widget.AppTheme.LikeButton"
         android:layout_width="43dp"
         android:layout_height="34dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="12dp"
+        android:background="#00FFFFFF"
         android:backgroundTint="#FDF6FE"
+        android:checkable="true"
         android:contentDescription="@string/like"
-        android:src="@drawable/heart_66744"
+        app:icon="@drawable/ic_like_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:checked="@sample/posts.json/data/likedByMe"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:text="@sample/posts.json/data/likes" />
 
     <ImageButton
         android:id="@+id/tritochki"
@@ -110,11 +115,11 @@
         android:layout_height="36dp"
         android:layout_marginStart="81dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#FDF6FE"
+        android:backgroundTint="#00FDF6FE"
         android:contentDescription="@string/share"
         app:layout_constraintStart_toEndOf="@+id/like"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
-        app:srcCompat="@drawable/icons8_share_48"
+        app:srcCompat="@drawable/ic_share_24"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
@@ -161,11 +166,11 @@
         android:layout_width="41dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:contentDescription="@string/share"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.63"
-        android:contentDescription="@string/share"
         app:layout_constraintStart_toEndOf="@+id/share"
         app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
-        app:srcCompat="@drawable/eye_icon_icons_com_50398__1_" />
+        app:srcCompat="@android:drawable/ic_menu_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

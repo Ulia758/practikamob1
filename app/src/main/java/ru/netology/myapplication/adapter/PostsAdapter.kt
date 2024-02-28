@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.netology.myapplication.dto.Post
 import ru.netology.myapplication.R
 import ru.netology.myapplication.databinding.CardPostBinding
+import kotlin.math.ln
+import kotlin.math.pow
 
 interface OnInteractionListener {
     fun onLike(post: Post) {}
@@ -38,9 +40,10 @@ class PostViewHolder(
             osnovnoitext.text = post.content
             textlike.text = post.likes.toString()
             textShare.text = post.share.toString()
-            like.setImageResource(
-                if (post.likedByMe) R.drawable.heart_icon_icons_com_50374 else R.drawable.heart_66744
-            )
+            like.isChecked = post.likedByMe
+            textlike.text = getFormatedNumber(post.likes.toLong())
+            textShare.text = getFormatedNumber(post.share.toLong())
+
             tritochki.setOnClickListener {
                 PopupMenu(it.context, it).apply {
                     inflate(R.menu.popup_menu)
@@ -82,7 +85,11 @@ class PostViewHolder(
         }
     }
 }
-
+fun getFormatedNumber(count: Long): String {
+    if (count < 1000) return "" + count
+    val exp = (ln(count.toDouble()) / ln(1000.0)).toInt()
+    return String.format("%.1f %c", count / 1000.0.pow(exp.toDouble()), "KMGTPE"[exp - 1])
+}
 class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
     override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
         return oldItem.id == newItem.id
