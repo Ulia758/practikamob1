@@ -1,4 +1,7 @@
 package ru.netology.myapplication.dto
+
+import android.content.Intent
+
 data class Post(
     val id: Int,
     val author: String,

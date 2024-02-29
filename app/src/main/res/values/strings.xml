@@ -8,10 +8,14 @@
     <string name="like">Нравится</string>
     <string name="_10">0</string>
     <string name="_5">0</string>
-    <string name="share">Share</string>
+    <string name="share">Поделиться</string>
     <string name="textprosmotrov">1</string>
     <string name="error_empty_content">Не может быть пустым</string>
     <string name="post_text">Текст поста</string>
-    <string name="remove">Remove</string>
-    <string name="edit">Edit</string>
+    <string name="remove">Удалить</string>
+    <string name="edit">Изменить</string>
+    <string name="chooser_share_post">Поделиться постом</string>
+    <string name="description_post_save">Сохранить</string>
+    <string name="cancel">Отменить</string>
+    <string name="play">Включить</string>
 </resources>

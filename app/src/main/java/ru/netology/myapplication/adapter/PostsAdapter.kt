@@ -16,6 +16,7 @@ interface OnInteractionListener {
     fun onShare(post: Post) {}
     fun onEdit(post: Post) {}
     fun onRemove(post: Post) {}
+    fun onVideo(post: Post){}
 }
 class PostsAdapter(
     private val onInteractionListener: OnInteractionListener
@@ -43,7 +44,6 @@ class PostViewHolder(
             like.isChecked = post.likedByMe
             textlike.text = getFormatedNumber(post.likes.toLong())
             textShare.text = getFormatedNumber(post.share.toLong())
-
             tritochki.setOnClickListener {
                 PopupMenu(it.context, it).apply {
                     inflate(R.menu.popup_menu)
@@ -81,6 +81,12 @@ class PostViewHolder(
                 else -> textShare.text = String.format(
                     "%.1fM", post.share.toDouble() / 1000000
                 )
+            }
+            video.setOnClickListener {
+                onInteractionListener.onVideo(post)
+            }
+            play.setOnClickListener {
+                onInteractionListener.onVideo(post)
             }
         }
     }

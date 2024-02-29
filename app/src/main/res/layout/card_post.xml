@@ -18,7 +18,7 @@
         android:contentDescription="@string/like"
         app:icon="@drawable/ic_like_24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
+        app:layout_constraintTop_toBottomOf="@+id/barrierContent"
         tools:checked="@sample/posts.json/data/likedByMe"
         tools:ignore="TouchTargetSizeCheck"
         tools:text="@sample/posts.json/data/likes" />
@@ -66,6 +66,36 @@
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
         app:constraint_referenced_ids="osnovnoitext" />
+
+    <ImageView
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_default"
+        app:layout_constraintBottom_toTopOf="@+id/barrierContent"
+        app:layout_constraintTop_toTopOf="@+id/barrier2"
+        app:srcCompat="@drawable/video"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <ImageButton
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_default"
+        android:layout_marginTop="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/barrier2"
+        android:contentDescription="@string/play"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="osnovnoitext, video" />
 
     <TextView
         android:id="@+id/author"
@@ -119,7 +149,7 @@
         android:backgroundTint="#00FDF6FE"
         android:contentDescription="@string/share"
         app:layout_constraintStart_toEndOf="@+id/like"
-        app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
+        app:layout_constraintTop_toBottomOf="@+id/barrierContent"
         app:icon="@drawable/ic_share_24"
         tools:checked="@sample/posts.json/data/sharedByMe"
         tools:text="@sample/posts.json/data/share"
@@ -138,7 +168,7 @@
         app:layout_constraintEnd_toStartOf="@+id/share"
         app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toEndOf="@+id/like"
-        app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
+        app:layout_constraintTop_toBottomOf="@+id/barrierContent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -152,7 +182,7 @@
         app:layout_constraintEnd_toStartOf="@+id/prosmotr"
         app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toEndOf="@+id/share"
-        app:layout_constraintTop_toBottomOf="@+id/osnovnoitext" />
+        app:layout_constraintTop_toBottomOf="@+id/barrierContent" />
 
     <TextView
         android:id="@+id/textprosmotr"
@@ -163,7 +193,7 @@
         android:text="@string/textprosmotrov"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/prosmotr"
-        app:layout_constraintTop_toBottomOf="@+id/osnovnoitext" />
+        app:layout_constraintTop_toBottomOf="@+id/barrierContent" />
 
     <ImageView
         android:id="@+id/prosmotr"
@@ -174,7 +204,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toEndOf="@+id/share"
-        app:layout_constraintTop_toBottomOf="@+id/osnovnoitext"
+        app:layout_constraintTop_toBottomOf="@+id/barrierContent"
         app:srcCompat="@android:drawable/ic_menu_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

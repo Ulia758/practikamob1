@@ -15,7 +15,7 @@ class PostRepositoryInMemoryImpl : PostRepository{
             likedByMe = false,
             likes = 489,
             share = 23,
-            shareByMe=false
+            shareByMe =false
         ),
         Post(
             id = nextId++,
