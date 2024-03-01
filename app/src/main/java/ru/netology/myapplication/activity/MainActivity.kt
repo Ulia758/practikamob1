@@ -1,5 +1,6 @@
 package ru.netology.myapplication.activity
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import ru.netology.myapplication.adapter.OnInteractionListener
 import ru.netology.myapplication.adapter.PostsAdapter
 import ru.netology.myapplication.databinding.ActivityMainBinding
