@@ -16,7 +16,6 @@ interface OnInteractionListener {
     fun onShare(post: Post) {}
     fun onEdit(post: Post) {}
     fun onRemove(post: Post) {}
-    fun onVideo(post: Post){}
 }
 class PostsAdapter(
     private val onInteractionListener: OnInteractionListener
@@ -83,12 +82,7 @@ class PostViewHolder(
                 )
             }
 
-            video.setOnClickListener {
-                onInteractionListener.onVideo(post)
-            }
-            play.setOnClickListener {
-                onInteractionListener.onVideo(post)
-            }
+
         }
     }
 }

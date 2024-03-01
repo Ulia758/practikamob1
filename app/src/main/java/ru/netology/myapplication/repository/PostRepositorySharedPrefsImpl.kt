@@ -24,7 +24,6 @@ class PostRepositorySharedPrefsImpl(contex: Context): PostRepository {
         }
     }
     override fun getAll(): LiveData<List<Post>> = data
-
     override fun save(post: Post) {
         if (post.id == 0) {
             posts = listOf(

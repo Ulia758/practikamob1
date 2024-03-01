@@ -1,27 +1,20 @@
 package ru.netology.myapplication.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.app.Activity
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import ru.netology.myapplication.databinding.FragmentNewPostBinding
 import androidx.navigation.fragment.findNavController
 import ru.netology.myapplication.dto.Post
 import ru.netology.myapplication.util.AndroidUtils
-import ru.netology.myapplication.util.PostArg
 import ru.netology.myapplication.util.StringArg
 import ru.netology.myapplication.viewmodel.PostViewModel
 
 class NewPostFragment : Fragment() {
     companion object{
-        var Bundle.postArg : Post? by PostArg
         var Bundle.textArg : String? by StringArg
     }
     private val viewModel: PostViewModel by viewModels(
@@ -31,11 +24,11 @@ class NewPostFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View {
-        val binding: FragmentNewPostBinding = FragmentNewPostBinding.inflate(layoutInflater)
-        val post = arguments?.postArg
+        val binding: FragmentNewPostBinding = FragmentNewPostBinding.inflate(inflater,
+            container,
+            false)
         val text = arguments?.textArg
         binding.edit.setText(when {
-            post != null -> post.content
             text != null -> text
             else         -> ""
         })

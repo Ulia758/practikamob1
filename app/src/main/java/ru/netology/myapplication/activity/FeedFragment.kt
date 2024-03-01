@@ -15,12 +15,8 @@ import ru.netology.myapplication.viewmodel.PostViewModel
 import ru.netology.myapplication.R
 import ru.netology.myapplication.databinding.FragmentFeedBinding
 import ru.netology.myapplication.dto.Post
-import ru.netology.myapplication.util.PostArg
 
 class FeedFragment : Fragment() {
-    companion object{
-        var Bundle.postArg : Post? by PostArg
-    }
     private val viewModel: PostViewModel by viewModels(
         ownerProducer = ::requireParentFragment
     )
@@ -28,17 +24,13 @@ class FeedFragment : Fragment() {
         inflater:LayoutInflater,
         container: ViewGroup?,
         savedInstanceState:Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentFeedBinding.inflate(
             inflater,
             container,
             false
         )
         val adapter = PostsAdapter(object : OnInteractionListener {
-            override fun onVideo(post: Post) {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(""))
-                startActivity(intent)
-            }
             override fun onEdit(post: Post) {
                 viewModel.edit(post)
             }
@@ -67,9 +59,6 @@ class FeedFragment : Fragment() {
             if(post.id == 0){
                 return@observe
             }
-            findNavController().navigate(R.id.action_feedFragment_to_newPostFragment, Bundle().apply {
-                postArg = post
-            })
         }
         binding.cancel.setOnClickListener {
             findNavController().navigate(R.id.action_feedFragment_to_newPostFragment)

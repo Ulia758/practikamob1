@@ -18,8 +18,7 @@ class PostRepositoryFileImpl (private val context: Context,) : PostRepository{
         if(file.exists()){
             context.openFileInput(filename).bufferedReader().use{
                 posts = gson.fromJson(it,type)
-                nextId = (posts.maxOfOrNull { it.id } ?: 0) + 1
-
+                data.value = posts
             }
         } else {
             posts = listOf(
@@ -46,7 +45,6 @@ class PostRepositoryFileImpl (private val context: Context,) : PostRepository{
             ).reversed()
             sync()
         }
-        data.value = posts
     }
     private fun sync() {
         context.openFileOutput(filename, Context.MODE_PRIVATE).bufferedWriter().use {
