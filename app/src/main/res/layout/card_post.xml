@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/card_post"
+    android:padding="@dimen/common_spacing">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/like"
@@ -75,19 +77,31 @@
         app:layout_constraintBottom_toTopOf="@+id/barrierContent"
         app:layout_constraintTop_toTopOf="@+id/barrier2"
         app:srcCompat="@drawable/video"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        tools:visibility="visible"
         tools:layout_editor_absoluteX="32dp" />
 
-    <ImageButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        app:iconTint="@null"
+        app:iconTintMode="add"
         android:layout_margin="@dimen/margin_default"
         android:layout_marginTop="64dp"
         app:layout_constraintBottom_toBottomOf="@+id/video"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/barrier2"
+        app:layout_constraintEnd_toEndOf="@+id/video"
+        app:layout_constraintStart_toStartOf="@+id/video"
+        app:layout_constraintTop_toTopOf="@+id/video"
         android:contentDescription="@string/play"
+        android:visibility="gone"
+        tools:visibility="visible"
         app:srcCompat="@android:drawable/ic_media_play" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -95,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="osnovnoitext, video" />
+        app:constraint_referenced_ids="osnovnoitext, video"/>
 
     <TextView
         android:id="@+id/author"

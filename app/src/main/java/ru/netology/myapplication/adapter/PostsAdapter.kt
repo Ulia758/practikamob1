@@ -82,6 +82,7 @@ class PostViewHolder(
                     "%.1fM", post.share.toDouble() / 1000000
                 )
             }
+
             video.setOnClickListener {
                 onInteractionListener.onVideo(post)
             }

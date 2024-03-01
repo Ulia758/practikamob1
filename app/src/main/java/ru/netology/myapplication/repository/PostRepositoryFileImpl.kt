@@ -91,6 +91,7 @@ class PostRepositoryFileImpl (private val context: Context,) : PostRepository{
             )
             ) + posts
             data.value = posts
+            sync()
             return
         }
         posts = posts.map{
