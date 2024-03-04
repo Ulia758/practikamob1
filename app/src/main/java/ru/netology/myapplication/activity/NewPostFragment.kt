@@ -24,15 +24,12 @@ class NewPostFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View {
-        val binding: FragmentNewPostBinding = FragmentNewPostBinding.inflate(inflater,
+        val binding= FragmentNewPostBinding.inflate(inflater,
             container,
             false)
-        val text = arguments?.textArg
-        binding.edit.setText(when {
-            text != null -> text
-            else         -> ""
-        })
-        binding.edit.requestFocus()
+        arguments?.textArg
+            ?.let(binding.edit::setText)
+
         binding.ok.setOnClickListener {
             viewModel.changeContent(binding.edit.text.toString())
             viewModel.save()

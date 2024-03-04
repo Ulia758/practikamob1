@@ -41,7 +41,6 @@ class FeedFragment : Fragment() {
                 viewModel.removeById(post.id)
             }
             override fun onShare(post: Post) {
-                viewModel.shareById(post.id)
                 val intent = Intent().apply {
                     action = Intent.ACTION_SEND
                     putExtra(Intent.EXTRA_TEXT, post.content)

@@ -36,6 +36,7 @@ class PostRepositorySharedPrefsImpl(contex: Context): PostRepository {
                 )
             ) + posts
             data.value = posts
+            sync()
             return
         }
         posts = posts.map {
